@@ -5,11 +5,14 @@ CFLAGS	=	-Wall -Werror -Wextra
 LIBFT	=	./lib
 
 LIB		=	$(LIBFT)/libft.a
-HEADER	=	-I $(LIBFT)/includes
+HEADER	=	-I ./lib/includes
 
 SRCS	=	src/main.c \
 			src/push_swap.c \
-			src/utils.c
+			src/utils.c \
+			src/errors.c \
+			src/free_memory.c \
+			src/validates.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -20,8 +23,8 @@ all: $(NAME)
 libft:
 	@make -C $(LIBFT)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIB) $(HEADER) -o $(NAME)
+$(NAME): $(OBJS) libft
+	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
 
 %.o:%.c
 	$(CC) $(CFLAGS) -o $@ -c $< ${HEADERS}

@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:04:18 by jemorais          #+#    #+#             */
-/*   Updated: 2024/11/12 16:27:08 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:15:22 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,8 +225,6 @@ int	ft_printf(const char *frt, ...)
 // 	count = ft_printf("%s\n", "");
 // 	printf("ft_printf count = %d\n\n", count);
 
-
-
 //     char    *str = "It's raining";
 //     char    *nulo = NULL;
 //     char    **ptr;
@@ -374,7 +372,6 @@ int	ft_printf(const char *frt, ...)
 
 //     ft_printf("\n---------result-----------\n");
 //     printcmp(myfunc, original);
-
 
 //     ft_printf("\n---------my func-----------\n");
 //     myfunc = ft_printf(NULL);

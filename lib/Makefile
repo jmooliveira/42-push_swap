@@ -45,9 +45,9 @@ SRCS		=	./libft/ft_isalpha.c \
 				./libft/ft_lstclear.c \
 				./libft/ft_lstiter.c \
 				./libft/ft_lstmap.c \
-				./ft_prinf/ft_printf.c \
-				./ft_prinf/ft_printf_utils1.c \
-				./ft_prinf/ft_printf_utils2.c \
+				./ft_printf/ft_printf.c \
+				./ft_printf/ft_printf_utils1.c \
+				./ft_printf/ft_printf_utils2.c \
 
 HEADER		=	./includes
 AR			=	ar rcs
@@ -58,10 +58,10 @@ OBJS		=	$(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-%.o: %.c $(HEADER)
-		$(CC) $(CFLAGS) -c $< -o $@
-		$(AR) $(NAME) $@
+%.o:%.c $(HEADER)
+		$(CC) $(CFLAGS) -c $< -o $@ -I $(HEADER)
 
 clean:
 		$(RM) $(OBJS)

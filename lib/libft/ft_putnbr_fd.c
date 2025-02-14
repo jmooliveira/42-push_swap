@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:02:31 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/13 00:09:49 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/14 17:07:37 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ void	ft_putnbr_fd(int n, int fd)
 	write(fd, &c, 1);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	int nb;// = 2147483648;
+// int	main(void)
+// {
+// 	int nb;// = 2147483648;
 
-	scanf("%d", &nb);
-	ft_putnbr_fd(nb, 1);
-}
+// 	scanf("%d", &nb);
+// 	ft_putnbr_fd(nb, 1);
+// }
