@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/15 20:59:11 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/16 19:10:33 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 
 # define FAILLURE_FEW_ARGUMENTS -10
 
+// struct stacks and datas
 typedef struct s_stack
 {
 	int	value;
@@ -54,9 +55,16 @@ int		ft_errors(int error);
 void	ft_free_split(char **split);
 bool	ft_validate_args(char **av, int ac);
 
-//init
+// init
 void    ft_init_push_swap_strings(char **numbers);
-void    ft_init_push_swap_args(char **av);
+void    ft_init_push_swap_args(char **av, int ac);
+void	add_data_to_stack(t_push_swap *data, int value);
+
+// free
+void ft_stack_free(t_stack **stack);
+
+// utils
+void	ft_print_stack(t_stack *stack);
 
 // operations
 void	ft_sa(t_push_swap *data);

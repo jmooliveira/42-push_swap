@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:10:49 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/15 15:48:15 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/16 18:10:59 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,16 @@ void	ft_free_split(char **split)
 	}
 	free(split);
 	split = NULL;
+}
+
+void	ft_stack_free(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
 }

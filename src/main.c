@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:20:39 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/15 20:29:47 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/16 19:10:43 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int	main(int ac, char **av)
 		if (!numbers)
 			ft_errors(-1);
 		ft_validate_string(numbers);
-		ft_init_push_swap_strings(numbers); // ESTOU AQUI
-		ft_free_split(numbers);
+		ft_init_push_swap_strings(numbers);
+		// ft_free_split(numbers);
 	}
 	else if (ac > 2)
 	{
 		ft_validate_args(&av[1], ac);
-		ft_init_push_swap_args(av[1]); // ESTOU AQUI
+		ft_init_push_swap_args(&av[1], ac); // I'm here
 	}
 	if (ac == 1)
 		ft_errors(-10);

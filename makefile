@@ -13,6 +13,7 @@ SRCS	=	src/main.c \
 			src/errors.c \
 			src/free_memory.c \
 			src/validates.c \
+			src/init.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
