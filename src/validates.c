@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:16:56 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/15 20:29:14 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/16 19:39:25 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ bool	ft_validate_args(char **av, int ac)
 			ft_errors(-4);
 		i++;
 	}
-	if (ft_duplicate_numbers(av + 1)) // nao entendi o av + 1
+	if (ft_duplicate_numbers(av + 1)) // nao entendi o av + 1, ver depois
 		ft_errors(-3);
 	return (true);
 }

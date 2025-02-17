@@ -3,11 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:18:47 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/14 17:26:10 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/16 21:00:21 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void    ft_push_swap(t_push_swap *data)
+{
+    // ft_sa(data); // TESTE
+	ft_print_stack(data->stack_a);
+}

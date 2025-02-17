@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/16 19:10:33 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/16 20:52:20 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ void ft_stack_free(t_stack **stack);
 
 // utils
 void	ft_print_stack(t_stack *stack);
+
+// push_swap
+void    ft_push_swap(t_push_swap *data);
 
 // operations
 void	ft_sa(t_push_swap *data);

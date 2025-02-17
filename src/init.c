@@ -1,3 +1,6 @@
+
+/* init.c */
+
 #include "push_swap.h"
 
 t_push_swap *ft_init(void)
@@ -47,8 +50,10 @@ void	ft_init_push_swap_strings(char **numbers)
 	}
 	ft_free_split(numbers);
 	ft_print_stack(data->stack_a); // Verifica os valores da stack
-	// trabalhar com a stack ---------ESTOU AQUI----------
+	
+	ft_push_swap(data); // ---------ESTOU AQUI----------
 	ft_stack_free(&data->stack_a);
+
 	//ft_lstclear(&data->stack_b);
 	free(data);
 }
@@ -69,7 +74,17 @@ void	ft_init_push_swap_args(char **av, int ac)
 		data->len_stack++;
 		i++;
 	}
+
+	/* VERIFICAR ERRO, 1 ARGUMENTO NAO CONSIGO VER O TAMANHO DA PILHA */
+
+	ft_printf("1 %d-\n", data->stack_a->next->value);
+	if(data->size_a < 2)
+		ft_printf("%d-\n", data->stack_a->value);
+	
 	ft_print_stack(data->stack_a); // Verifica os valores da stack
+
+	ft_push_swap(data);
+
 	ft_stack_free(&data->stack_a);
 	// ft_stack_free(&data->stack_b);
 	free(data);

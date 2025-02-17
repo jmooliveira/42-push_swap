@@ -1,3 +1,5 @@
+#makefile
+
 NAME	=	push_swap
 
 CC		=	cc
@@ -8,12 +10,14 @@ LIB		=	$(LIBFT)/libft.a
 HEADER	=	-I ./lib/includes
 
 SRCS	=	src/main.c \
-			src/push_swap.c \
-			src/utils.c \
-			src/errors.c \
-			src/free_memory.c \
 			src/validates.c \
+			src/errors.c \
 			src/init.c \
+			src/free_memory.c \
+			src/utils1.c \
+			src/utils2.c \
+			src/utils3.c \
+			src/push_swap.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
