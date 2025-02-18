@@ -6,13 +6,13 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:27:29 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/14 17:56:58 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/17 21:05:15 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
 	long	ascii_to_int;
 	int		i;
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	ascii_to_int = 0;
 	i = 0;
 	signal = 1;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+	while (nptr[i] == ' ' || (nptr[i] >= '\t' && nptr[i] <= '\r'))
 		i++;
 	if (nptr[i] == '+' || nptr[i] == '-')
 	{
@@ -31,12 +31,12 @@ int	ft_atoi(const char *nptr)
 			signal = -1;
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		ascii_to_int = ascii_to_int * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return ((int)ascii_to_int * signal);
+	return (ascii_to_int * signal);
 }
 
 // int	main(void)

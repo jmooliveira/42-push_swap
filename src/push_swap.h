@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/16 20:52:20 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/17 21:02:21 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
 // struct stacks and datas
 typedef struct s_stack
 {
-	int	value;
+	int				value;
 	struct s_stack	*next;
 }	t_stack;
 
@@ -53,21 +53,21 @@ bool	ft_validate_number(char *str);
 bool	ft_duplicate_numbers(char **numbers);
 int		ft_errors(int error);
 void	ft_free_split(char **split);
-bool	ft_validate_args(char **av, int ac);
+bool	ft_validate_args(int ac, char **av);
 
 // init
-void    ft_init_push_swap_strings(char **numbers);
-void    ft_init_push_swap_args(char **av, int ac);
+void	ft_init_push_swap_strings(char **numbers);
+void	ft_init_push_swap_args(char **av, int ac);
 void	add_data_to_stack(t_push_swap *data, int value);
 
 // free
-void ft_stack_free(t_stack **stack);
+void	ft_stack_free(t_stack **stack);
 
 // utils
 void	ft_print_stack(t_stack *stack);
 
 // push_swap
-void    ft_push_swap(t_push_swap *data);
+void	ft_push_swap(t_push_swap *data);
 
 // operations
 void	ft_sa(t_push_swap *data);
