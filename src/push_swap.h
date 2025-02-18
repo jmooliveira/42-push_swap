@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/18 12:20:44 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/18 17:54:43 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void	ft_print_stack(t_stack *stack);
 // push_swap
 void	ft_push_swap(t_push_swap *data);
 bool	ft_is_sorted(t_stack *stack);
+void	ft_three_numbers(t_push_swap *data);
+int		ft_next_min(t_stack *stack, int min);
+int		ft_min(t_stack *stack);
+void	ft_four_or_five_numbers(t_push_swap *data);
+void	ft_until_five_numbers(t_push_swap *data);
 
 // operations
 void	ft_sa(t_push_swap *data);
