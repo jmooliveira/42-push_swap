@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:16:56 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/17 21:01:53 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/18 12:35:27 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ bool	ft_validate_args(int ac, char **av)
 		if (!ft_validate_number(av[i]))
 			ft_errors(-2);
 		num = ft_atoi(av[i]);
-		printf("%ld\n", num);
 		if (num < INT_MIN || num > INT_MAX)
 			ft_errors(-4);
 		i++;

@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/17 21:02:21 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/18 12:20:44 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	ft_print_stack(t_stack *stack);
 
 // push_swap
 void	ft_push_swap(t_push_swap *data);
+bool	ft_is_sorted(t_stack *stack);
 
 // operations
 void	ft_sa(t_push_swap *data);
