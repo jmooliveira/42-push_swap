@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   until_five_numbers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/18 17:55:50 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/25 00:56:58 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*until_five_numbers.c*/
 
 #include "push_swap.h"
 
@@ -90,8 +92,8 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 		ft_pa(data);
 	if (data->stack_a->value > data->stack_a->next->value)
 		ft_sa(data);
-	ft_printf("min: %d\n", min);
-	ft_printf("min_next: %d\n", next_min);
+	//ft_printf("min: %d\n", min);
+	//ft_printf("min_next: %d\n", next_min);
 }
 
 void	ft_until_five_numbers(t_push_swap *data)

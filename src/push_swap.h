@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/18 17:54:43 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/25 04:05:39 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,12 @@ int		ft_next_min(t_stack *stack, int min);
 int		ft_min(t_stack *stack);
 void	ft_four_or_five_numbers(t_push_swap *data);
 void	ft_until_five_numbers(t_push_swap *data);
+
+// quicksort
+void	ft_quicksort(t_push_swap *data);
+void	ft_partition(t_push_swap *data, int pivot_value);
+void	ft_quicksort_b(t_push_swap *data);
+void	ft_partition_b(t_push_swap *data, int pivot_value);
 
 // operations
 void	ft_sa(t_push_swap *data);

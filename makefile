@@ -18,6 +18,8 @@ SRCS	=	src/main.c \
 			src/utils2.c \
 			src/utils3.c \
 			src/push_swap.c \
+			src/until_five_numbers.c \
+			src/quicksort.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -32,7 +34,7 @@ $(NAME): $(OBJS) libft
 	$(CC) $(CFLAGS) $(OBJS) $(LIB) -o $(NAME)
 
 %.o:%.c
-	$(CC) $(CFLAGS) -o $@ -c $< ${HEADERS}
+	$(CC) $(CFLAGS) -o $@ -c $< ${HEADER}
 
 clean:
 	$(RM) $(OBJS)
