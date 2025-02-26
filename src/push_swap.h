@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/25 04:05:39 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/26 08:41:19 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int		ft_next_min(t_stack *stack, int min);
 int		ft_min(t_stack *stack);
 void	ft_four_or_five_numbers(t_push_swap *data);
 void	ft_until_five_numbers(t_push_swap *data);
+int		ft_median(t_stack *stack, int size);
 
 // quicksort
 void	ft_quicksort(t_push_swap *data);

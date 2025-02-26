@@ -10,6 +10,7 @@ void	ft_partition(t_push_swap *data, int pivot_value)
 
 	i = 0;
 	size = data->size_a;
+	// printf("%d", size);
 	while(i < size)
 	{
 		if(data->stack_a->value < pivot_value)
@@ -39,15 +40,14 @@ void	ft_partition_b(t_push_swap *data, int pivot_value)
 
 void	ft_quicksort_b(t_push_swap *data)
 {
-	t_stack	*pivot;
+	// t_stack	*pivot;
 	int		pivot_value;
 
 	// if (ft_is_sorted(data->stack_b))
 	// 	return;
 	if (data->size_b <= 1)
 		return;
-	pivot = data->stack_b;
-	pivot_value = pivot->value;
+	pivot_value = ft_median(data->stack_b, data->size_b);
 	ft_partition_b(data, pivot_value);
 	ft_quicksort(data);
 	ft_quicksort_b(data);
@@ -55,9 +55,55 @@ void	ft_quicksort_b(t_push_swap *data)
 		ft_pb(data);
 }
 
+void	ft_sort_array(int *array, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (array[i] > array[j])
+			{
+				temp = array[i];
+				array[i] = array[j];
+				array[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+int	ft_median(t_stack *stack, int size)
+{
+	int	*array;
+	int	i;
+	int	median;
+
+	array = (int *)malloc(sizeof(int) * size);
+	if (!array)
+		return (0);
+	i = 0;
+	while (stack)
+	{
+		array[i] = stack->value;
+		stack = stack->next;
+		i++;
+	}
+	ft_sort_array(array, size);
+	median = array[size / 2];
+	free(array);
+	return (median);
+}
+
 void	ft_quicksort(t_push_swap *data)
 {
-	t_stack *pivot;
+	// t_stack *pivot;
 	int		pivot_value;
 
 	if (ft_is_sorted(data->stack_a))
@@ -67,8 +113,8 @@ void	ft_quicksort(t_push_swap *data)
 		ft_until_five_numbers(data);
 		return;
 	}
-	pivot = data->stack_a;
-	pivot_value = pivot->value;
+	// pivot = data->stack_a;
+	pivot_value = ft_median(data->stack_a, data->size_a); // AJUSTAR
 	ft_partition(data, pivot_value);
 	ft_quicksort(data);
 	ft_quicksort_b(data);
