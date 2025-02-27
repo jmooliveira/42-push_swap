@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/27 11:45:27 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/27 14:45:30 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 	int	min;
 	int	next_min;
 
+	ft_printf("Tamanho da stack a em four_or_five_number entrada: %d\n", data->size_a);
+	ft_printf("Tamanho da stack b em four_or_five_number entrada: %d\n", data->size_b);
+	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
+	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
 	min = ft_min(data->stack_a);
 	next_min = ft_next_min(data->stack_a, min);
 	while (data->size_a > 3)
@@ -88,12 +92,21 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 			ft_ra(data);
 	}
 	ft_three_numbers(data);
+	ft_pa(data); // GOHORSE
+	ft_pa(data); // GOHORSE
+	ft_printf("Tamanho da stack a em four or five number: %d\n", data->size_a);
 	ft_printf("Tamanho da stack b em four or five number: %d\n", data->size_b);
 	ft_printf("Aqui joga tudo de stack b para stack a desordenado\n");
-	while (data->size_b > 0)
-		ft_pa(data);
-	if (data->stack_a->value > data->stack_a->next->value)
-		ft_sa(data);
+	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
+	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
+	/*
+	*/
+	//while (data->size_b > 0)
+	//	ft_pa(data);
+	//if (data->stack_a->value > data->stack_a->next->value)
+	//	ft_sa(data);
+	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
+	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
 	//ft_printf("min: %d\n", min);
 	//ft_printf("min_next: %d\n", next_min);
 	ft_printf("Saiu sort 5num\n");
