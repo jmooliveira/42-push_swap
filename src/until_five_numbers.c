@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/25 00:56:58 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/27 11:45:27 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,12 +88,15 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 			ft_ra(data);
 	}
 	ft_three_numbers(data);
+	ft_printf("Tamanho da stack b em four or five number: %d\n", data->size_b);
+	ft_printf("Aqui joga tudo de stack b para stack a desordenado\n");
 	while (data->size_b > 0)
 		ft_pa(data);
 	if (data->stack_a->value > data->stack_a->next->value)
 		ft_sa(data);
 	//ft_printf("min: %d\n", min);
 	//ft_printf("min_next: %d\n", next_min);
+	ft_printf("Saiu sort 5num\n");
 }
 
 void	ft_until_five_numbers(t_push_swap *data)
