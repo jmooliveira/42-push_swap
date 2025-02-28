@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   until_five_numbers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/27 14:45:30 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/28 17:59:35 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_three_numbers(t_push_swap *data)
 	int	middle;
 	int	botton;
 
+	ft_printf("Entrou three_numbers_a\n");
 	top = data->stack_a->value;
 	middle = data->stack_a->next->value;
 	botton = data->stack_a->next->next->value;
@@ -77,7 +78,9 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 {
 	int	min;
 	int	next_min;
+	int	flag_min_send;
 
+	flag_min_send = 0;
 	ft_printf("Tamanho da stack a em four_or_five_number entrada: %d\n", data->size_a);
 	ft_printf("Tamanho da stack b em four_or_five_number entrada: %d\n", data->size_b);
 	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
@@ -86,30 +89,23 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 	next_min = ft_next_min(data->stack_a, min);
 	while (data->size_a > 3)
 	{
-		if (data->stack_a->value == min || data->stack_a->value == next_min)
+		if (data->stack_a->value == min)
+		{
+			ft_pb(data);
+			flag_min_send= 1;
+		}
+		else if (data->stack_a->value == next_min && flag_min_send == 1)
 			ft_pb(data);
 		else
 			ft_ra(data);
 	}
 	ft_three_numbers(data);
-	ft_pa(data); // GOHORSE
-	ft_pa(data); // GOHORSE
-	ft_printf("Tamanho da stack a em four or five number: %d\n", data->size_a);
-	ft_printf("Tamanho da stack b em four or five number: %d\n", data->size_b);
-	ft_printf("Aqui joga tudo de stack b para stack a desordenado\n");
+	ft_printf("Tamanho da stack a em four or five number saida: %d\n", data->size_a);
+	ft_printf("Tamanho da stack b em four or five number saida: %d\n", data->size_b);
+	// ft_printf("Aqui joga tudo de stack b para stack a desordenado\n");
 	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
 	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
-	/*
-	*/
-	//while (data->size_b > 0)
-	//	ft_pa(data);
-	//if (data->stack_a->value > data->stack_a->next->value)
-	//	ft_sa(data);
-	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
-	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
-	//ft_printf("min: %d\n", min);
-	//ft_printf("min_next: %d\n", next_min);
-	ft_printf("Saiu sort 5num\n");
+	ft_printf("Saiu sort four_or_five_number\n");
 }
 
 void	ft_until_five_numbers(t_push_swap *data)

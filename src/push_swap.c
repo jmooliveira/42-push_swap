@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:18:47 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/27 14:23:57 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/28 18:00:51 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,22 @@ bool	ft_is_sorted(t_stack *stack)
 	while (tmp->next)
 	{
 		if (tmp->value > tmp->next->value)
+			return (false);
+		tmp = tmp->next;
+	}
+	return (true);
+}
+
+bool	ft_is_rev_sorted(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+		return (true);
+	tmp = stack;
+	while (tmp->next)
+	{
+		if (tmp->value < tmp->next->value)
 			return (false);
 		tmp = tmp->next;
 	}
@@ -51,6 +67,27 @@ void	ft_push_swap(t_push_swap *data)
 		ft_printf("quick sort\n");
 		ft_quicksort(data);
 	}
+	// ft_finish_rotation(data); //// verificar no final
 	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
 	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
+}
+void	ft_finish_rotation(t_push_swap *data)
+{
+	int	min;
+	int	pos_min;
+	t_stack		*nav;
+
+	min = INT_MAX;
+	pos_min = 0;
+	nav = data->stack_a;
+	while (nav)
+	{
+		if (nav->value < min)
+			min = nav->value;
+		nav = nav->next;
+	}
+	while (data->stack_a->value != min)
+	{
+		ft_ra(data);
+	}
 }

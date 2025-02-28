@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:20:39 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/25 00:07:07 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/28 12:26:40 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 	{
 		numbers = ft_split(av[1], ' ');
 		if (!numbers)
-			ft_errors(-1);
+		ft_errors(-1);
 		ft_validate_string(numbers);
 		ft_init_push_swap_strings(numbers);
 		// TRATAR PARA 1 NUMERO EM STR  // NÃO PRECISA

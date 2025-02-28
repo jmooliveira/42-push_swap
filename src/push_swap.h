@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/26 08:41:19 by jeff             ###   ########.fr       */
+/*   Updated: 2025/02/28 15:44:49 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,17 @@ void	ft_print_stack(t_stack *stack);
 // push_swap
 void	ft_push_swap(t_push_swap *data);
 bool	ft_is_sorted(t_stack *stack);
+bool	ft_is_rev_sorted(t_stack *stack);
 void	ft_three_numbers(t_push_swap *data);
 int		ft_next_min(t_stack *stack, int min);
 int		ft_min(t_stack *stack);
 void	ft_four_or_five_numbers(t_push_swap *data);
 void	ft_until_five_numbers(t_push_swap *data);
 int		ft_median(t_stack *stack, int size);
+void	ft_three_numbers_b(t_push_swap *data);
+void	ft_four_or_five_numbers_b(t_push_swap *data);
+void	ft_until_five_numbers_b(t_push_swap *data);
+void	ft_finish_rotation(t_push_swap *data);
 
 // quicksort
 void	ft_quicksort(t_push_swap *data);
