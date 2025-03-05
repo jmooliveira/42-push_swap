@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   until_five_numbers.c                               :+:      :+:    :+:   */
+/*   until_five_numbers_a.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/28 17:59:35 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/05 20:09:08 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 	int	flag_min_send;
 
 	flag_min_send = 0;
-	ft_printf("Tamanho da stack a em four_or_five_number entrada: %d\n", data->size_a);
-	ft_printf("Tamanho da stack b em four_or_five_number entrada: %d\n", data->size_b);
 	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
 	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
 	min = ft_min(data->stack_a);
@@ -100,12 +98,8 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 			ft_ra(data);
 	}
 	ft_three_numbers(data);
-	ft_printf("Tamanho da stack a em four or five number saida: %d\n", data->size_a);
-	ft_printf("Tamanho da stack b em four or five number saida: %d\n", data->size_b);
-	// ft_printf("Aqui joga tudo de stack b para stack a desordenado\n");
 	ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
 	ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
-	ft_printf("Saiu sort four_or_five_number\n");
 }
 
 void	ft_until_five_numbers(t_push_swap *data)

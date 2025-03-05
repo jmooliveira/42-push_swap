@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:58:52 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/05 17:56:14 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/05 20:44:12 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_push_swap	*ft_init(void)
 	data->stack_b = NULL;
 	data->size_a = 0;
 	data->size_b = 0;
-	data->len_stack = 0;
 	return (data);
 }
 
@@ -40,7 +39,6 @@ void	add_data_to_stack(t_push_swap *data, int value)
 	new_node->next = data->stack_a;
 	data->stack_a = new_node;
 	data->size_a++;
-	data->len_stack++;
 }
 
 void	ft_init_push_swap_args(char **av, int ac)
@@ -57,10 +55,11 @@ void	ft_init_push_swap_args(char **av, int ac)
 		add_data_to_stack(data, ft_atoi(av[i]));
 		i--;
 	}
-	ft_push_swap(data);
+	//ft_push_swap(data);
 	ft_stack_free(&data->stack_a);
 	ft_stack_free(&data->stack_b);
 	free(data);
+	// VALIDATE INT_MAX AND INT_MIN
 }
 
 void	ft_init_push_swap_strings(char **numbers)
@@ -68,7 +67,6 @@ void	ft_init_push_swap_strings(char **numbers)
 	t_push_swap	*data;
 	int			i;
 
-	// INT_MAX and INT_MIN not check
 	data = ft_init();
 	if (!data)
 	{
@@ -85,8 +83,9 @@ void	ft_init_push_swap_strings(char **numbers)
 		i--;
 	}
 	ft_free_split(numbers);
-	ft_push_swap(data);
+	//ft_push_swap(data);
 	ft_stack_free(&data->stack_a);
 	ft_stack_free(&data->stack_b);
 	free(data);
+	// VALIDATE INT_MAX AND INT_MIN
 }

@@ -18,8 +18,8 @@ SRCS	=	src/main.c \
 			src/op_swap.c \
 			src/op_rotate.c \
 			src/op_reverse_rotate.c \
-			src/push_swap.c \
-			src/until_five_numbers_a.c \
+			# src/push_swap.c \
+			# src/until_five_numbers_a.c \
 			# src/until_five_numbers_b.c \
 
 OBJS	=	$(SRCS:.c=.o)

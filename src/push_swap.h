@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/05 19:29:45 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/05 20:23:48 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,14 @@
 typedef struct s_stack
 {
 	int				value;
+	int				position;
+	int				f_index;
+	int				price;
+	bool			median;
+	bool			cheap;
+	struct s_stack	*target;
 	struct s_stack	*next;
+	struct s_stack	*prev;
 }	t_stack;
 
 typedef struct s_push_swap
@@ -44,7 +51,6 @@ typedef struct s_push_swap
 	t_stack	*stack_b;
 	int		size_a;
 	int		size_b;
-	int		len_stack;
 }	t_push_swap;
 
 // validates.c
@@ -52,9 +58,6 @@ void		ft_validate_string(char **numbers);
 bool		ft_validate_number(char *str);
 bool		ft_duplicate_numbers(char **numbers);
 bool		ft_validate_args(int ac, char **av);
-
-int			ft_errors(int error);
-void		ft_print_stack(t_stack *stack);
 
 // init
 void		ft_init_push_swap_strings(char **numbers);
@@ -65,6 +68,10 @@ t_push_swap	*ft_init(void);
 // free_memory.c
 void		ft_stack_free(t_stack **stack);
 void		ft_free_split(char **split);
+
+// CHECK
+int			ft_errors(int error);
+void		ft_print_stack(t_stack *stack);
 
 // push_swap
 void		ft_push_swap(t_push_swap *data);
