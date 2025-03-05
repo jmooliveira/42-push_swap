@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validates.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:16:56 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/18 12:35:27 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/05 19:55:18 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,18 @@
 
 #include "push_swap.h"
 
-void	ft_validate_string(char **numbers)
-{
-	int	i;
-
-	i = 0;
-	while (numbers[i])
-	{
-		if (!ft_validate_number(numbers[i]))
-		{
-			ft_free_split(numbers);
-			ft_errors(-2);
-		}
-		i++;
-	}
-	if (ft_duplicate_numbers(numbers))
-	{
-		ft_free_split(numbers);
-		ft_errors(-3);
-	}
-}
 
 bool	ft_validate_number(char *str)
 {
 	int	i;
-
+	
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
-		i++;
+	i++;
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-			return (false);
+		return (false);
 		i++;
 	}
 	return (true);
@@ -55,7 +35,7 @@ bool	ft_duplicate_numbers(char **numbers)
 {
 	int	i;
 	int	j;
-
+	
 	i = 0;
 	while (numbers[i])
 	{
@@ -63,7 +43,7 @@ bool	ft_duplicate_numbers(char **numbers)
 		while (numbers[j])
 		{
 			if (ft_atoi(numbers[i]) == ft_atoi(numbers[j]))
-				return (true);
+			return (true);
 			j++;
 		}
 		i++;
@@ -75,18 +55,40 @@ bool	ft_validate_args(int ac, char **av)
 {
 	int		i;
 	long	num;
-
+	
 	i = 0;
 	while (i < ac - 1)
 	{
 		if (!ft_validate_number(av[i]))
-			ft_errors(-2);
+		ft_errors(-2);
 		num = ft_atoi(av[i]);
-		if (num < INT_MIN || num > INT_MAX)
+		if (num < INT_MIN || num > INT_MAX) // VALIDATE INT_MAX AND INT_MIN
 			ft_errors(-4);
 		i++;
 	}
-	if (ft_duplicate_numbers(av + 1))
+		if (ft_duplicate_numbers(av + 1))
 		ft_errors(-3);
-	return (true);
-}
+		return (true);
+	}
+	
+	void	ft_validate_string(char **numbers)
+	{
+		int	i;
+	
+		i = 0;
+		while (numbers[i])
+		{
+			if (!ft_validate_number(numbers[i]))
+			{
+				ft_free_split(numbers);
+				ft_errors(-2);
+			}
+			i++;
+		}
+		if (ft_duplicate_numbers(numbers))
+		{
+			ft_free_split(numbers);
+			ft_errors(-3);
+		}
+		// VALIDATE INT_MAX AND INT_MIN
+	}

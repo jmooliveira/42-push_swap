@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/28 15:44:49 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/05 19:29:45 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,57 +47,57 @@ typedef struct s_push_swap
 	int		len_stack;
 }	t_push_swap;
 
-// validate
-void	ft_validate_string(char **numbers);
-bool	ft_validate_number(char *str);
-bool	ft_duplicate_numbers(char **numbers);
-int		ft_errors(int error);
-void	ft_free_split(char **split);
-bool	ft_validate_args(int ac, char **av);
+// validates.c
+void		ft_validate_string(char **numbers);
+bool		ft_validate_number(char *str);
+bool		ft_duplicate_numbers(char **numbers);
+bool		ft_validate_args(int ac, char **av);
+
+int			ft_errors(int error);
+void		ft_print_stack(t_stack *stack);
 
 // init
-void	ft_init_push_swap_strings(char **numbers);
-void	ft_init_push_swap_args(char **av, int ac);
-void	add_data_to_stack(t_push_swap *data, int value);
+void		ft_init_push_swap_strings(char **numbers);
+void		ft_init_push_swap_args(char **av, int ac);
+void		add_data_to_stack(t_push_swap *data, int value);
+t_push_swap	*ft_init(void);
 
-// free
-void	ft_stack_free(t_stack **stack);
-
-// utils
-void	ft_print_stack(t_stack *stack);
+// free_memory.c
+void		ft_stack_free(t_stack **stack);
+void		ft_free_split(char **split);
 
 // push_swap
-void	ft_push_swap(t_push_swap *data);
-bool	ft_is_sorted(t_stack *stack);
-bool	ft_is_rev_sorted(t_stack *stack);
-void	ft_three_numbers(t_push_swap *data);
-int		ft_next_min(t_stack *stack, int min);
-int		ft_min(t_stack *stack);
-void	ft_four_or_five_numbers(t_push_swap *data);
-void	ft_until_five_numbers(t_push_swap *data);
-int		ft_median(t_stack *stack, int size);
-void	ft_three_numbers_b(t_push_swap *data);
-void	ft_four_or_five_numbers_b(t_push_swap *data);
-void	ft_until_five_numbers_b(t_push_swap *data);
-void	ft_finish_rotation(t_push_swap *data);
+void		ft_push_swap(t_push_swap *data);
+bool		ft_is_sorted(t_stack *stack);
+bool		ft_is_rev_sorted(t_stack *stack);
+void		ft_three_numbers(t_push_swap *data);
+int			ft_next_min(t_stack *stack, int min);
+int			ft_min(t_stack *stack);
+void		ft_four_or_five_numbers(t_push_swap *data);
+void		ft_until_five_numbers_a(t_push_swap *data);
+int			ft_median(t_stack *stack, int size);
+void		ft_three_numbers_b(t_push_swap *data);
+void		ft_four_or_five_numbers_b(t_push_swap *data);
+void		ft_until_five_numbers_b(t_push_swap *data);
+void		ft_finish_rotation(t_push_swap *data);
 
 // quicksort
-void	ft_quicksort(t_push_swap *data);
-void	ft_partition(t_push_swap *data, int pivot_value);
-void	ft_quicksort_b(t_push_swap *data);
-void	ft_partition_b(t_push_swap *data, int pivot_value);
+// void		ft_quicksort(t_push_swap *data);
+// void		ft_partition(t_push_swap *data, int pivot_value);
+// void		ft_quicksort_b(t_push_swap *data);
+// void		ft_partition_b(t_push_swap *data, int pivot_value);
 
 // operations
-void	ft_sa(t_push_swap *data);
-void	ft_sb(t_push_swap *data);
-void	ft_ss(t_push_swap *data);
-void	ft_pa(t_push_swap *data);
-void	ft_pb(t_push_swap *data);
-void	ft_ra(t_push_swap *data);
-void	ft_rb(t_push_swap *data);
-void	ft_rr(t_push_swap *data);
-void	ft_rra(t_push_swap *data);
-void	ft_rrb(t_push_swap *data);
-void	ft_rrr(t_push_swap *data);
+void		ft_sa(t_push_swap *data);
+void		ft_sb(t_push_swap *data);
+void		ft_ss(t_push_swap *data);
+void		ft_pa(t_push_swap *data);
+void		ft_pb(t_push_swap *data);
+void		ft_ra(t_push_swap *data);
+void		ft_rb(t_push_swap *data);
+void		ft_rr(t_push_swap *data);
+void		ft_rra(t_push_swap *data);
+void		ft_rrb(t_push_swap *data);
+void		ft_rrr(t_push_swap *data);
 
 #endif

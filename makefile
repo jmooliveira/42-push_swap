@@ -14,13 +14,13 @@ SRCS	=	src/main.c \
 			src/errors.c \
 			src/init.c \
 			src/free_memory.c \
-			src/utils1.c \
-			src/utils2.c \
-			src/utils3.c \
+			src/op_push.c \
+			src/op_swap.c \
+			src/op_rotate.c \
+			src/op_reverse_rotate.c \
 			src/push_swap.c \
-			src/until_five_numbers.c \
-			src/quicksort.c \
-			src/until_five_numbers_b.c \
+			src/until_five_numbers_a.c \
+			# src/until_five_numbers_b.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
