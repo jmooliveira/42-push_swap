@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_and_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:10:49 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 00:04:03 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 14:04:49 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ int	ft_errors(int error)
 	else
 		ft_putstr_fd("Error: Unexpected error\n", STDERR_FILENO);
 	exit(2);
+	// DELETE THIS FUNCTION. USE JUST ERROR RETURN
 }

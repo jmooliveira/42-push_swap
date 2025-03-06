@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 09:32:48 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 20:54:08 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-# include <stdio.h> // to remove
 
 # include <stdlib.h>
 # include <stdbool.h>
@@ -30,7 +28,6 @@
 # define FAILLURE_INVALID_ARGUMENT -2
 # define FAILLURE_DUPLICATED_ARGUMENT -3
 # define FAILLURE_OUT_OF_RANGE -4
-
 # define FAILLURE_FEW_ARGUMENTS -10
 
 // struct stacks and datas
@@ -39,9 +36,9 @@ typedef struct s_stack
 	int				value;
 	int				position;
 	int				upper;
+	struct s_stack	*target;
 	int				price;
 	int				cheap;
-	struct s_stack	*target;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
@@ -72,24 +69,33 @@ void		ft_free_split(char **split);
 
 // CHECK
 int			ft_errors(int error);
-void		ft_print_stack(t_stack *stack);
-t_stack		*ft_last_node(t_stack *stack);
 
 // push_swap
 void		ft_push_swap(t_push_swap *data);
+
+// utils.c
 bool		ft_is_sorted(t_stack *stack);
 bool		ft_is_rev_sorted(t_stack *stack);
-int			ft_next_min(t_stack *stack, int min);
-int			ft_min(t_stack *stack);
+void		ft_finish_rotation(t_push_swap *data);
+t_stack		*ft_last_node(t_stack *stack);
 
+// algorithm.c
+void		ft_algorithm(t_push_swap *data);
+void		ft_section_stack(t_push_swap *data);
+void		ft_set_position_a(t_push_swap *data);
+void		ft_set_position_b(t_push_swap *data);
+
+// SUPORT
+void		ft_print_stack(t_stack *stack);
+void		ft_print_position(t_stack *stack);
+void		ft_print_upper(t_stack *stack);
+
+// until_five_numbers
 void		ft_until_five_numbers(t_push_swap *data);
 void		ft_four_or_five_numbers(t_push_swap *data);
 void		ft_three_numbers(t_push_swap *data);
-int			ft_median(t_stack *stack, int size);
-// void		ft_three_numbers_b(t_push_swap *data);
-// void		ft_four_or_five_numbers_b(t_push_swap *data);
-// void		ft_until_five_numbers_b(t_push_swap *data);
-void		ft_finish_rotation(t_push_swap *data);
+int			ft_min(t_stack *stack);
+int			ft_next_min(t_stack *stack, int min);
 
 // operations
 void		ft_sa(t_push_swap *data);

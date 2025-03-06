@@ -20,6 +20,7 @@ SRCS	=	src/main.c \
 			src/utils.c \
 			src/push_swap.c \
 			src/until_five_numbers.c \
+			src/algorithm.c \
 			# src/until_five_numbers_b.c \
 
 OBJS	=	$(SRCS:.c=.o)

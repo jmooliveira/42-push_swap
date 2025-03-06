@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:18:47 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 10:14:32 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 19:59:14 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 			ft_printf("size_a: %d\n", data->size_a);
 			ft_printf("A -");
 			ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
+			ft_printf("size_a: %d\n", data->size_b);
 			ft_printf("B -");
 			ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
 			if (ft_is_sorted(data->stack_a))
@@ -35,12 +36,12 @@
 			else
 			{
 				ft_printf("algorithm\n");
-				//ft_algorithm(data);
+				ft_algorithm(data);
 			}
 			// ft_finish_rotation(data); //// verificar no final
-			ft_printf("A -");
-			ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
-			ft_printf("B -");
-			ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
+			// ft_printf("FINAL\n");
+			// ft_printf("A -");
+			// ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
+			// ft_printf("B -");
+			// ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
 		}
-		
