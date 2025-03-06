@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:16:56 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/05 20:09:50 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 00:04:05 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	ft_validate_number(char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
-		return (false);
+			return (false);
 		i++;
 	}
 	return (true);

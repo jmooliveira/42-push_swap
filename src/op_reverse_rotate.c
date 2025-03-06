@@ -1,45 +1,48 @@
-/*op_reverse_rotate.c */
-
 #include"push_swap.h"
+
+/*op_reverse_rotate.c */
 
 void	ft_rra(t_push_swap *data)
 {
+	t_stack	*tmp;
 	t_stack	*last;
-	t_stack	*s_last;
 
 	if (data->size_a < 2)
-		return ;
+		return;
+
 	last = data->stack_a;
-	s_last = NULL;
 	while (last->next)
-	{
-		s_last = last;
 		last = last->next;
-	}
-	s_last->next = NULL;
-	last->next = data->stack_a;
-	data->stack_a = last;
+
+	tmp = last;
+	last->prev->next = NULL;
+	tmp->prev = NULL;
+	tmp->next = data->stack_a;
+	data->stack_a->prev = tmp;
+	data->stack_a = tmp;
+
 	ft_printf("rra\n");
 }
 
 void	ft_rrb(t_push_swap *data)
 {
+	t_stack	*tmp;
 	t_stack	*last;
-	t_stack	*s_last;
 
-	if (data->size_a < 2)
-		return ;
-	last = data->stack_a;
-	s_last = NULL;
+	if (data->size_b < 2)
+		return;
+
+	last = data->stack_b;
 	while (last->next)
-	{
-		s_last = last;
 		last = last->next;
-	}
-	s_last->next = NULL;
-	last->next = data->stack_a;
-	data->stack_a = last;
-	ft_printf("rra\n");
+
+	tmp = last;
+	last->prev->next = NULL;
+	tmp->prev = NULL;
+	tmp->next = data->stack_a;
+	data->stack_b->prev = tmp;
+	data->stack_b = tmp;;
+	ft_printf("rrb\n");
 }
 
 void	ft_rrr(t_push_swap *data)

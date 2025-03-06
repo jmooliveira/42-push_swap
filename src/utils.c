@@ -50,3 +50,27 @@ void	ft_finish_rotation(t_push_swap *data)
 		ft_ra(data);
 	}
 }
+
+void	ft_print_stack(t_stack *stack)
+{
+	t_stack	*tmp;
+
+	tmp = stack;
+	ft_printf("Stack (frente): ");
+	while (stack)
+	{
+		ft_printf("%d -> ", stack->value);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
+	tmp = stack;
+	while (tmp && tmp->next)
+		tmp = tmp->next;
+	ft_printf("Stack (trás): ");
+	while (tmp)
+	{
+		ft_printf("%d -> ", tmp->value);
+		tmp = tmp->prev;
+	}
+	ft_printf("NULL\n");
+}

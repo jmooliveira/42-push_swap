@@ -11,15 +11,15 @@ HEADER	=	-I ./lib/includes
 
 SRCS	=	src/main.c \
 			src/validates.c \
-			src/errors.c \
 			src/init.c \
-			src/free_memory.c \
+			src/free_and_error.c \
 			src/op_push.c \
 			src/op_swap.c \
 			src/op_rotate.c \
 			src/op_reverse_rotate.c \
-			# src/push_swap.c \
-			# src/until_five_numbers_a.c \
+			src/utils.c \
+			src/push_swap.c \
+			src/until_five_numbers.c \
 			# src/until_five_numbers_b.c \
 
 OBJS	=	$(SRCS:.c=.o)
