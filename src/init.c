@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:58:52 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 00:34:11 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 09:31:25 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,7 @@ void	add_data_to_stack(t_push_swap *data, int value)
 		data->stack_a = new_node;
 	else
 	{
-		last = data->stack_a;
-		while (last->next)
-			last = last->next;
+		last = ft_last_node(data->stack_a);
 		last->next = new_node;
 		new_node->prev = last;
 	}

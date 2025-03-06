@@ -9,13 +9,10 @@ void	ft_rra(t_push_swap *data)
 
 	if (data->size_a < 2)
 		return;
-
-	last = data->stack_a;
-	while (last->next)
-		last = last->next;
-
+	last = ft_last_node(data->stack_a);
+	if (last->prev)
+		last->prev->next = NULL;
 	tmp = last;
-	last->prev->next = NULL;
 	tmp->prev = NULL;
 	tmp->next = data->stack_a;
 	data->stack_a->prev = tmp;
@@ -31,15 +28,12 @@ void	ft_rrb(t_push_swap *data)
 
 	if (data->size_b < 2)
 		return;
-
-	last = data->stack_b;
-	while (last->next)
-		last = last->next;
-
+	last = ft_last_node(data->stack_a);
+	if (last->prev)
+		last->prev->next = NULL;
 	tmp = last;
-	last->prev->next = NULL;
 	tmp->prev = NULL;
-	tmp->next = data->stack_a;
+	tmp->next = data->stack_b;
 	data->stack_b->prev = tmp;
 	data->stack_b = tmp;;
 	ft_printf("rrb\n");
@@ -47,7 +41,9 @@ void	ft_rrb(t_push_swap *data)
 
 void	ft_rrr(t_push_swap *data)
 {
-	ft_rra(data);
-	ft_rrb(data);
+	if(data->size_a > 1)
+		ft_rra(data);
+	if(data->size_b > 1)
+		ft_rrb(data);
 	ft_printf("rrr\n");
 }

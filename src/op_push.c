@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:58:35 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 01:08:47 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 08:45:47 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_pb(t_push_swap *data)
 		data->stack_a->prev = NULL;
 	tmp->next = data->stack_b;
 	if (data->stack_b)
-		data->stack_a->prev = tmp;
+		data->stack_b->prev = tmp;
 	data->stack_b = tmp;
 	data->size_b++;
 	data->size_a--;

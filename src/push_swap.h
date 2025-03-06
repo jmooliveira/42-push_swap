@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 00:39:12 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 09:32:48 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void		ft_free_split(char **split);
 // CHECK
 int			ft_errors(int error);
 void		ft_print_stack(t_stack *stack);
+t_stack		*ft_last_node(t_stack *stack);
 
 // push_swap
 void		ft_push_swap(t_push_swap *data);
@@ -89,12 +90,6 @@ int			ft_median(t_stack *stack, int size);
 // void		ft_four_or_five_numbers_b(t_push_swap *data);
 // void		ft_until_five_numbers_b(t_push_swap *data);
 void		ft_finish_rotation(t_push_swap *data);
-
-// quicksort
-// void		ft_quicksort(t_push_swap *data);
-// void		ft_partition(t_push_swap *data, int pivot_value);
-// void		ft_quicksort_b(t_push_swap *data);
-// void		ft_partition_b(t_push_swap *data, int pivot_value);
 
 // operations
 void		ft_sa(t_push_swap *data);

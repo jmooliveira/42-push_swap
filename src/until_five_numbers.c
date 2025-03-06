@@ -6,7 +6,7 @@
 /*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 01:11:24 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/06 10:20:42 by jeff             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	ft_three_numbers(t_push_swap *data)
 	int	middle;
 	int	botton;
 
-	ft_printf("Entrou three_numbers_a\n");
 	top = data->stack_a->value;
 	middle = data->stack_a->next->value;
 	botton = data->stack_a->next->next->value;
@@ -81,8 +80,6 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 	int	flag_min_send;
 
 	flag_min_send = 0;
-	// ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
-	// ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
 	min = ft_min(data->stack_a);
 	next_min = ft_next_min(data->stack_a, min);
 	while (data->size_a > 3)
@@ -98,16 +95,15 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 			ft_ra(data);
 	}
 	ft_three_numbers(data);
-	// ft_print_stack(data->stack_b); // VERIFICA OS VALORES EM B
-	// ft_print_stack(data->stack_a); // VERIFICA OS VALORES EM A
+	while(data->size_b > 0)
+		ft_pa(data);
 }
 
 void	ft_until_five_numbers(t_push_swap *data)
 {
 	if (data->size_a == 2)
 	{
-		puts("entrou");
-		if (data->stack_a > data->stack_a->next)
+		if (data->stack_a->value > data->stack_a->next->value)
 			ft_sa(data);
 	}
 	else if (data->size_a == 3)
