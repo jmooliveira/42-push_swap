@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validates.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:16:56 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 00:04:05 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/07 19:40:05 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 bool	ft_validate_number(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
 	i++;
@@ -34,7 +34,9 @@ bool	ft_duplicate_numbers(char **numbers)
 {
 	int	i;
 	int	j;
-	
+
+
+	ft_printf("//////////////////------///////////////////"); /////////
 	i = 0;
 	while (numbers[i])
 	{
@@ -53,20 +55,24 @@ bool	ft_duplicate_numbers(char **numbers)
 bool	ft_validate_args(int ac, char **av)
 {
 	int		i;
-	
+
 	i = 0;
 	while (i < ac - 1)
 	{
 		if (!ft_validate_number(av[i]))
-			ft_errors(-2);
+			ft_error();
 		i++;
 	}
 	if (ft_duplicate_numbers(av + 1))
-		ft_errors(-3);
+	{
+	ft_printf("/////////////////////////////////////"); /////////
+		ft_error();
+
+	}
 	return (true);
 	// VALIDATE INT_MAX AND INT_MIN
 }
-	
+
 void	ft_validate_string(char **numbers)
 {
 	int	i;
@@ -77,14 +83,15 @@ void	ft_validate_string(char **numbers)
 		if (!ft_validate_number(numbers[i]))
 		{
 			ft_free_split(numbers);
-			ft_errors(-2);
+			ft_error();
 		}
 		i++;
 	}
 	if (ft_duplicate_numbers(numbers))
 	{
+		ft_printf("////////////////////ttttttttttttt/////////////////////"); /////////
 		ft_free_split(numbers);
-		ft_errors(-3);
+		ft_error();
 	}
 	// VALIDATE INT_MAX AND INT_MIN
 }

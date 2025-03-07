@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 20:54:08 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:33:49 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "../lib/includes/libft.h"
 # include "../lib/includes/ft_printf.h"
 
-// valgrind --leak-check=full ./push_swap 3 2 1
+// valgrind --leak-check=full --track-origins=yes ./push_swap 3 2 1
 
 //# define SPLIT false
 # define FAILLURE_ALLOCATION -1
@@ -39,6 +39,7 @@ typedef struct s_stack
 	struct s_stack	*target;
 	int				price;
 	int				cheap;
+
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
@@ -68,7 +69,7 @@ void		ft_stack_free(t_stack **stack);
 void		ft_free_split(char **split);
 
 // CHECK
-int			ft_errors(int error);
+void			ft_error(void);
 
 // push_swap
 void		ft_push_swap(t_push_swap *data);
@@ -79,16 +80,26 @@ bool		ft_is_rev_sorted(t_stack *stack);
 void		ft_finish_rotation(t_push_swap *data);
 t_stack		*ft_last_node(t_stack *stack);
 
+
 // algorithm.c
 void		ft_algorithm(t_push_swap *data);
 void		ft_section_stack(t_push_swap *data);
 void		ft_set_position_a(t_push_swap *data);
 void		ft_set_position_b(t_push_swap *data);
+void	ft_set_target(t_push_swap *data);
+t_stack	*ft_node_min(t_stack *stack);
+void	ft_price_a(t_push_swap *data);
+void	ft_price_b(t_push_swap *data);
+void	ft_cheap(t_push_swap *data);
 
-// SUPORT
+// SUPORT --------------------------------------------
 void		ft_print_stack(t_stack *stack);
 void		ft_print_position(t_stack *stack);
 void		ft_print_upper(t_stack *stack);
+void	ft_print_target(t_stack *stack);
+void	ft_print_price(t_stack *stack);
+void	ft_print_cheap(t_stack *stack);
+void	ft_print_price_target(t_stack *stack);
 
 // until_five_numbers
 void		ft_until_five_numbers(t_push_swap *data);

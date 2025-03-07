@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/07 17:36:09 by jemorais          #+#    #+#             */
+/*   Updated: 2025/03/07 19:24:08 by jemorais         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 bool	ft_is_sorted(t_stack *stack)
@@ -88,6 +100,50 @@ void	ft_print_upper(t_stack *stack)
 	while (stack)
 	{
 		ft_printf("%d -> ", stack->upper);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
+}
+
+void	ft_print_target(t_stack *stack)
+{
+	ft_printf("Target  : ");
+	while (stack)
+	{
+		ft_printf("%d -> ", stack->target->value);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
+}
+
+void	ft_print_price_target(t_stack *stack)
+{
+	ft_printf("Price_t : ");
+	while (stack)
+	{
+		ft_printf("%d -> ", stack->target->price);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
+}
+
+void	ft_print_price(t_stack *stack)
+{
+	ft_printf("Price   : ");
+	while (stack)
+	{
+		ft_printf("%d -> ", stack->price);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
+}
+
+void	ft_print_cheap(t_stack *stack)
+{
+	ft_printf("Set_cheap: ");
+	while (stack)
+	{
+		ft_printf("%d -> ", stack->cheap);
 		stack = stack->next;
 	}
 	ft_printf("NULL\n");

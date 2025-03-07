@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:10:49 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 14:04:49 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/07 19:33:26 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,8 @@ void	ft_stack_free(t_stack **stack)
 	}
 }
 
-int	ft_errors(int error)
+void	ft_error(void)
 {
-	if (error == -1)
-		ft_putstr_fd("Error: Memory split allocation failed\n", STDERR_FILENO);
-	else if (error == -2)
-		ft_putstr_fd("Error: Invalid Number\n", STDERR_FILENO);
-	else if (error == -3)
-		ft_putstr_fd("Error: Duplicated number\n", STDERR_FILENO);
-	else if (error == -4)
-		ft_putstr_fd("Error: Number out of range\n", STDERR_FILENO);
-	else if (error == -10)
-		ft_putstr_fd("Few Args\n ./push_swap <arguments>\n", STDERR_FILENO);
-	else
-		ft_putstr_fd("Error: Unexpected error\n", STDERR_FILENO);
-	exit(2);
-	// DELETE THIS FUNCTION. USE JUST ERROR RETURN
+	ft_printf("Error\n");
+	exit(-1);
 }

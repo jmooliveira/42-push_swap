@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:58:52 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 09:31:25 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/07 19:30:53 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	ft_init_push_swap_args(char **av, int ac)
 
 	data = ft_init();
 	if (!data)
-		ft_errors(-11);
+		ft_error();
 	i = 0;
 	while (i < ac - 1)
 	{
@@ -81,7 +81,7 @@ void	ft_init_push_swap_strings(char **numbers)
 	if (!data)
 	{
 		ft_free_split(numbers);
-		ft_errors(-11);
+		ft_error();
 	}
 	i = 0;
 	while (numbers[i])
