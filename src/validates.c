@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 16:16:56 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 10:15:39 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 10:53:50 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 bool	ft_validate_number(char *str)
 {
-	int	i;
+	int		i;
 	long	num;
 
 	i = 0;
-	if(!str[i])
+	if (!str[i])
 		return (false);
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -35,7 +35,7 @@ bool	ft_validate_number(char *str)
 		i++;
 	}
 	num = ft_atoi(str);
-	if (num >INT_MAX || num <INT_MIN)
+	if (num > INT_MAX || num < INT_MIN)
 		return (false);
 	return (true);
 }
@@ -52,7 +52,7 @@ bool	ft_duplicate_numbers(char **numbers)
 		while (numbers[j])
 		{
 			if (ft_atoi(numbers[i]) == ft_atoi(numbers[j]))
-			return (true);
+				return (true);
 			j++;
 		}
 		i++;

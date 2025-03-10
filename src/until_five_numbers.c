@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 10:21:12 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 16:43:35 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 		if (data->stack_a->value == min)
 		{
 			ft_pb(data);
-			flag_min_send= 1;
+			flag_min_send = 1;
 		}
 		else if (data->stack_a->value == next_min && flag_min_send == 1)
 			ft_pb(data);
@@ -68,7 +68,7 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 			ft_ra(data);
 	}
 	ft_three_numbers(data);
-	while(data->size_b > 0)
+	while (data->size_b > 0)
 		ft_pa(data);
 }
 

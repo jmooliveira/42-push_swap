@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 17:36:09 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 10:31:21 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:10:47 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,10 @@ bool	ft_is_sorted(t_stack *stack)
 	return (true);
 }
 
-bool	ft_is_rev_sorted(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	if (!stack)
-		return (true);
-	tmp = stack;
-	while (tmp->next)
-	{
-		if (tmp->value < tmp->next->value)
-			return (false);
-		tmp = tmp->next;
-	}
-	return (true);
-}
-
 void	ft_finish_rotation(t_push_swap *data)
 {
-	int	min;
-	t_stack		*nav;
+	int		min;
+	t_stack	*nav;
 
 	min = INT_MAX;
 	nav = data->stack_a;
@@ -72,81 +56,28 @@ t_stack	*ft_last_node(t_stack *stack)
 	return (stack);
 }
 
-/*SUPORT --------------------------------------------*/
-
-void	ft_print_stack(t_stack *stack)
+void	ft_section_stack(t_push_swap *data)
 {
-	ft_printf("Stack: ");
-	while (stack)
-	{
-		ft_printf("%d -> ", stack->value);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
+	while (data->size_a > 3)
+		ft_pb(data);
 }
 
-void	ft_print_position(t_stack *stack)
+t_stack	*ft_node_min(t_stack *stack)
 {
-	ft_printf("Position: ");
-	while (stack)
-	{
-		ft_printf("%d -> ", stack->position);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
-}
+	long		node_value;
+	t_stack		*tmp;
+	t_stack		*min_node;
 
-void	ft_print_upper(t_stack *stack)
-{
-	ft_printf("Upper   : ");
-	while (stack)
+	tmp = stack;
+	node_value = LONG_MAX;
+	while (tmp)
 	{
-		ft_printf("%d -> ", stack->upper);
-		stack = stack->next;
+		if (tmp->value < node_value)
+		{
+			min_node = tmp;
+			node_value = tmp->value;
+		}
+		tmp = tmp->next;
 	}
-	ft_printf("NULL\n");
-}
-
-void	ft_print_target(t_stack *stack)
-{
-	ft_printf("Target  : ");
-	while (stack)
-	{
-		ft_printf("%d -> ", stack->target->value);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
-}
-
-void	ft_print_price_target(t_stack *stack)
-{
-	ft_printf("Prc_tgt : ");
-	while (stack)
-	{
-		ft_printf("%d -> ", stack->target->price);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
-}
-
-void	ft_print_price(t_stack *stack)
-{
-	ft_printf("Price   : ");
-	while (stack)
-	{
-		ft_printf("%d -> ", stack->price);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
-}
-
-void	ft_print_cheap(t_stack *stack)
-{
-	ft_printf("Set_chp : ");
-	while (stack)
-	{
-		ft_printf("%d -> ", stack->cheap);
-		stack = stack->next;
-	}
-	ft_printf("NULL\n");
+	return (min_node);
 }

@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:20:39 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 10:15:26 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 15:41:08 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,5 @@ int	main(int ac, char **av)
 		ft_validate_args(ac, &av[0]);
 		ft_init_push_swap_args(&av[1], ac);
 	}
-	if (ac == 1)
-		ft_error();
-	ft_printf("\nTHAT'S ALL FOLKS!\n");
 	return (EXIT_SUCCESS);
 }

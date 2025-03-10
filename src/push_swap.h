@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 10:33:37 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 17:05:47 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,30 +73,41 @@ int			ft_next_min(t_stack *stack, int min);
 
 // utils.c
 bool		ft_is_sorted(t_stack *stack);
-bool		ft_is_rev_sorted(t_stack *stack);
 void		ft_finish_rotation(t_push_swap *data);
 t_stack		*ft_last_node(t_stack *stack);
+void		ft_section_stack(t_push_swap *data);
+t_stack		*ft_node_min(t_stack *stack);
 
 // algorithm.c
 void		ft_algorithm(t_push_swap *data);
-void		ft_section_stack(t_push_swap *data);
-void		ft_set_position_a(t_push_swap *data);
-void		ft_set_position_b(t_push_swap *data);
+t_stack		*ft_find_best_cheap(t_push_swap *data);
+void		ft_rotate_a(t_push_swap *data, t_stack *best_cheap);
+void		ft_rotate_b(t_push_swap *data, t_stack *best_cheap);
+void		ft_rotate_both(t_push_swap *data, t_stack *best_cheap);
+
+// sets_1.c
+void		ft_set_values(t_push_swap *data);
+void		ft_set_cheap(t_push_swap *data);
 void		ft_set_target(t_push_swap *data);
-t_stack		*ft_node_min(t_stack *stack);
-void		ft_price_a(t_push_swap *data);
-void		ft_price_b(t_push_swap *data);
-void		ft_cheap(t_push_swap *data);
+
+// sets_2.c
+void		ft_set_position_b(t_push_swap *data);
+void		ft_set_position_a(t_push_swap *data);
+void		ft_set_price_a(t_push_swap *data);
+void		ft_set_price_b(t_push_swap *data);
 
 // operations
 void		ft_sa(t_push_swap *data);
 void		ft_sb(t_push_swap *data);
 void		ft_ss(t_push_swap *data);
+
 void		ft_pa(t_push_swap *data);
 void		ft_pb(t_push_swap *data);
+
 void		ft_ra(t_push_swap *data);
 void		ft_rb(t_push_swap *data);
 void		ft_rr(t_push_swap *data);
+
 void		ft_rra(t_push_swap *data);
 void		ft_rrb(t_push_swap *data);
 void		ft_rrr(t_push_swap *data);
