@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 14:58:52 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/07 19:30:53 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 09:49:08 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ void	ft_init_push_swap_args(char **av, int ac)
 		i++;
 	}
 	ft_push_swap(data);
-	ft_stack_free(&data->stack_a);
-	ft_stack_free(&data->stack_b);
+	ft_free_stack(&data->stack_a);
+	ft_free_stack(&data->stack_b);
 	free(data);
 	// VALIDATE INT_MAX AND INT_MIN
 }
@@ -91,8 +91,8 @@ void	ft_init_push_swap_strings(char **numbers)
 	}
 	ft_free_split(numbers);
 	ft_push_swap(data);
-	ft_stack_free(&data->stack_a);
-	ft_stack_free(&data->stack_b);
+	ft_free_stack(&data->stack_a);
+	ft_free_stack(&data->stack_b);
 	free(data);
 	// VALIDATE INT_MAX AND INT_MIN
 }

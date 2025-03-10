@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/07 19:33:49 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 10:33:37 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,6 @@
 
 // valgrind --leak-check=full --track-origins=yes ./push_swap 3 2 1
 
-//# define SPLIT false
-# define FAILLURE_ALLOCATION -1
-# define FAILLURE_INVALID_ARGUMENT -2
-# define FAILLURE_DUPLICATED_ARGUMENT -3
-# define FAILLURE_OUT_OF_RANGE -4
-# define FAILLURE_FEW_ARGUMENTS -10
-
 // struct stacks and datas
 typedef struct s_stack
 {
@@ -39,7 +32,6 @@ typedef struct s_stack
 	struct s_stack	*target;
 	int				price;
 	int				cheap;
-
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
@@ -64,42 +56,13 @@ void		ft_init_push_swap_args(char **av, int ac);
 void		add_data_to_stack(t_push_swap *data, int value);
 t_push_swap	*ft_init(void);
 
-// free_memory.c
-void		ft_stack_free(t_stack **stack);
+// free_and_error.c
+void		ft_free_stack(t_stack **stack);
 void		ft_free_split(char **split);
-
-// CHECK
-void			ft_error(void);
+void		ft_error(void);
 
 // push_swap
 void		ft_push_swap(t_push_swap *data);
-
-// utils.c
-bool		ft_is_sorted(t_stack *stack);
-bool		ft_is_rev_sorted(t_stack *stack);
-void		ft_finish_rotation(t_push_swap *data);
-t_stack		*ft_last_node(t_stack *stack);
-
-
-// algorithm.c
-void		ft_algorithm(t_push_swap *data);
-void		ft_section_stack(t_push_swap *data);
-void		ft_set_position_a(t_push_swap *data);
-void		ft_set_position_b(t_push_swap *data);
-void	ft_set_target(t_push_swap *data);
-t_stack	*ft_node_min(t_stack *stack);
-void	ft_price_a(t_push_swap *data);
-void	ft_price_b(t_push_swap *data);
-void	ft_cheap(t_push_swap *data);
-
-// SUPORT --------------------------------------------
-void		ft_print_stack(t_stack *stack);
-void		ft_print_position(t_stack *stack);
-void		ft_print_upper(t_stack *stack);
-void	ft_print_target(t_stack *stack);
-void	ft_print_price(t_stack *stack);
-void	ft_print_cheap(t_stack *stack);
-void	ft_print_price_target(t_stack *stack);
 
 // until_five_numbers
 void		ft_until_five_numbers(t_push_swap *data);
@@ -107,6 +70,23 @@ void		ft_four_or_five_numbers(t_push_swap *data);
 void		ft_three_numbers(t_push_swap *data);
 int			ft_min(t_stack *stack);
 int			ft_next_min(t_stack *stack, int min);
+
+// utils.c
+bool		ft_is_sorted(t_stack *stack);
+bool		ft_is_rev_sorted(t_stack *stack);
+void		ft_finish_rotation(t_push_swap *data);
+t_stack		*ft_last_node(t_stack *stack);
+
+// algorithm.c
+void		ft_algorithm(t_push_swap *data);
+void		ft_section_stack(t_push_swap *data);
+void		ft_set_position_a(t_push_swap *data);
+void		ft_set_position_b(t_push_swap *data);
+void		ft_set_target(t_push_swap *data);
+t_stack		*ft_node_min(t_stack *stack);
+void		ft_price_a(t_push_swap *data);
+void		ft_price_b(t_push_swap *data);
+void		ft_cheap(t_push_swap *data);
 
 // operations
 void		ft_sa(t_push_swap *data);
@@ -120,5 +100,14 @@ void		ft_rr(t_push_swap *data);
 void		ft_rra(t_push_swap *data);
 void		ft_rrb(t_push_swap *data);
 void		ft_rrr(t_push_swap *data);
+
+/*SUPORT --------------------------------------------*/
+void		ft_print_stack(t_stack *stack);
+void		ft_print_position(t_stack *stack);
+void		ft_print_upper(t_stack *stack);
+void		ft_print_target(t_stack *stack);
+void		ft_print_price(t_stack *stack);
+void		ft_print_cheap(t_stack *stack);
+void		ft_print_price_target(t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 17:36:09 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/07 19:24:08 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 10:31:21 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ t_stack	*ft_last_node(t_stack *stack)
 	return (stack);
 }
 
+/*SUPORT --------------------------------------------*/
+
 void	ft_print_stack(t_stack *stack)
 {
 	ft_printf("Stack: ");
@@ -118,7 +120,7 @@ void	ft_print_target(t_stack *stack)
 
 void	ft_print_price_target(t_stack *stack)
 {
-	ft_printf("Price_t : ");
+	ft_printf("Prc_tgt : ");
 	while (stack)
 	{
 		ft_printf("%d -> ", stack->target->price);
@@ -140,7 +142,7 @@ void	ft_print_price(t_stack *stack)
 
 void	ft_print_cheap(t_stack *stack)
 {
-	ft_printf("Set_cheap: ");
+	ft_printf("Set_chp : ");
 	while (stack)
 	{
 		ft_printf("%d -> ", stack->cheap);

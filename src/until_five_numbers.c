@@ -3,43 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   until_five_numbers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jeff <jeff@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 17:52:36 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/06 10:20:42 by jeff             ###   ########.fr       */
+/*   Updated: 2025/03/10 10:21:12 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*until_five_numbers.c*/
 
 #include "push_swap.h"
-
-void	ft_three_numbers(t_push_swap *data)
-{
-	int	top;
-	int	middle;
-	int	botton;
-
-	top = data->stack_a->value;
-	middle = data->stack_a->next->value;
-	botton = data->stack_a->next->next->value;
-	if (top > middle && middle > botton && botton < top)
-	{
-		ft_ra(data);
-		ft_sa(data);
-	}
-	else if (top < middle && middle > botton && botton < top)
-		ft_rra(data);
-	else if (top > middle && middle < botton && botton < top)
-		ft_ra(data);
-	else if (top < middle && middle > botton && botton > top)
-	{
-		ft_rra(data);
-		ft_sa(data);
-	}
-	else if (top > middle && middle < botton && botton > top)
-		ft_sa(data);
-}
 
 int	ft_next_min(t_stack *stack, int min)
 {
@@ -97,6 +70,33 @@ void	ft_four_or_five_numbers(t_push_swap *data)
 	ft_three_numbers(data);
 	while(data->size_b > 0)
 		ft_pa(data);
+}
+
+void	ft_three_numbers(t_push_swap *data)
+{
+	int	top;
+	int	middle;
+	int	botton;
+
+	top = data->stack_a->value;
+	middle = data->stack_a->next->value;
+	botton = data->stack_a->next->next->value;
+	if (top > middle && middle > botton && botton < top)
+	{
+		ft_ra(data);
+		ft_sa(data);
+	}
+	else if (top < middle && middle > botton && botton < top)
+		ft_rra(data);
+	else if (top > middle && middle < botton && botton < top)
+		ft_ra(data);
+	else if (top < middle && middle > botton && botton > top)
+	{
+		ft_rra(data);
+		ft_sa(data);
+	}
+	else if (top > middle && middle < botton && botton > top)
+		ft_sa(data);
 }
 
 void	ft_until_five_numbers(t_push_swap *data)

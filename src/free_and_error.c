@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 15:10:49 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/07 19:33:26 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 09:46:25 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_free_split(char **split)
 	split = NULL;
 }
 
-void	ft_stack_free(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
@@ -43,5 +43,5 @@ void	ft_stack_free(t_stack **stack)
 void	ft_error(void)
 {
 	ft_printf("Error\n");
-	exit(-1);
+	exit(EXIT_FAILURE);
 }
