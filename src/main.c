@@ -5,31 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/14 17:20:39 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 15:41:08 by jemorais         ###   ########.fr       */
+/*   Created: 2025/03/14 14:52:04 by jemorais          #+#    #+#             */
+/*   Updated: 2025/03/17 14:46:13 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*main.c*/
 
-#include "push_swap.h"
+#include "so_long.h"
 
-int	main(int ac, char **av)
+int	main(int n_args, char **file)
 {
-	char	**numbers;
+	t_game	*game;
 
-	if (ac == 2)
-	{
-		numbers = ft_split(av[1], ' ');
-		if (!numbers)
-			ft_error();
-		ft_validate_string(numbers);
-		ft_init_push_swap_strings(numbers);
-	}
-	else if (ac > 2)
-	{
-		ft_validate_args(ac, &av[0]);
-		ft_init_push_swap_args(&av[1], ac);
-	}
-	return (EXIT_SUCCESS);
+	if (n_args != 2)
+		ft_message_error(ERR_ARGS);
+	ft_validate_input_file(file[1]);
+	game = ft_calloc(1, sizeof(t_game));
+	game->map = ft_calloc(1, sizeof(t_map));
+	game->player = ft_calloc(1, sizeof(t_player));
+	ft_init_map(game, file[1]);
+	ft_validate_map(game);
+	ft_so_long(game);
+	ft_free_game_final(game);
 }

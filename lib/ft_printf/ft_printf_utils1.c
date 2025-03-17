@@ -6,11 +6,11 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:42:23 by jemorais          #+#    #+#             */
-/*   Updated: 2024/11/06 17:03:29 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:30:30 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_check_ptr(void *ptr)
 {

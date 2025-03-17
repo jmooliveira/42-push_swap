@@ -6,11 +6,11 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:04:18 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/14 17:15:22 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:30:30 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_check_arg(va_list print, const char *frt)
 {
@@ -38,18 +38,15 @@ int	ft_find_parameter(va_list print, const char *frt)
 {
 	int	count;
 	int	i;
-	int	j;
 
 	count = 0;
 	i = 0;
-	j = 0;
 	while (frt[i])
 	{
 		if (frt[i] == '%')
 		{
 			i++;
 			count += ft_check_arg(print, &frt[i]);
-			j++;
 		}
 		else
 		{
@@ -100,9 +97,9 @@ int	ft_printf(const char *frt, ...)
 
 //     count = 0;
 
-//     //cc -w ft_printf.c ft_printf.h ft_lib.c ft_types.c ft_utils.c
-// 	//-Wall -Wextra -Werror
-//     //compile with -w
+// //cc -Wall -Wextra -Werror
+// //ft_printf.h ft_printf_utils1.c ft_printf_utils2.c
+// //compile with -w
 
 // 	//Test 1: c, s, d, i
 // 	printf("Test1\n");
@@ -382,3 +379,19 @@ int	ft_printf(const char *frt, ...)
 //     ft_printf("\n---------result-----------\n");
 //     printcmp(myfunc, original);
 // }
+
+// // int	main(void)
+// // {
+// // 	char	*name = "Jefferson";
+// // 	int		age = 38;
+
+// // 	ft_printf("Meu nome eh % e tenho % anos\n");
+// // 	//printf("Meu nome eh % e tenho % anos\n");
+// // 	ft_printf("Meu nome eh % s e tenho % d anos. \n", name, age);
+// // 	//printf("Meu nome eh % s e tenho % d anos. \n", name, age);
+// // 	ft_printf("Meu nome eh % s e tenho %d anos. \n", name, age);
+// // 	//printf("Meu nome eh % s e tenho %d anos. \n", name, age);
+// // 	//ft_printf("Meu nome eh % d e tenho %s anos. \n", age, name);
+// // 	printf("Meu nome eh % d e tenho %s anos. \n", age, name);
+// // 	return (0);
+// // }
