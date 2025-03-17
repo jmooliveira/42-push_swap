@@ -1,33 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   free_and_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 14:26:42 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/14 17:05:34 by jemorais         ###   ########.fr       */
+/*   Created: 2025/02/14 15:10:49 by jemorais          #+#    #+#             */
+/*   Updated: 2025/03/10 09:46:25 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+/*free_and_error.c*/
 
-char	*ft_strrchr(const char *s, int c)
+#include "push_swap.h"
+
+void	ft_free_split(char **split)
 {
 	int	i;
-	int	flag;
 
 	i = 0;
-	flag = -1;
-	while (s[i])
+	while (split[i])
 	{
-		if (s[i] == (char) c)
-			flag = i;
+		free(split[i]);
 		i++;
 	}
-	if ((unsigned char) c == '\0')
-		return ((char *)s + i);
-	if (flag != -1)
-		return ((char *)s + flag);
-	return (NULL);
+	free(split);
+	split = NULL;
+}
+
+void	ft_free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+}
+
+void	ft_error(void)
+{
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
 }

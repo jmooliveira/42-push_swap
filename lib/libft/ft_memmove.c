@@ -6,11 +6,11 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 11:48:49 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/07 18:28:57 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:07:48 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../includes/libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

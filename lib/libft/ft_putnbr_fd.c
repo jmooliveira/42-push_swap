@@ -6,11 +6,11 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 13:02:31 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/07 18:28:57 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/02/14 17:07:37 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../includes/libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -34,9 +34,8 @@ void	ft_putnbr_fd(int n, int fd)
 
 // int	main(void)
 // {
-// 	int nb;
+// 	int nb;// = 2147483648;
 
 // 	scanf("%d", &nb);
 // 	ft_putnbr_fd(nb, 1);
 // }
-	// = 2147483648;

@@ -6,32 +6,36 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 14:27:29 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/07 18:28:57 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/10 10:52:16 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "../includes/libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atoi(const char *nptr)
 {
-	unsigned int	ascii_to_int;
-	int				i;
-	int				signal;
+	long	ascii_to_int;
+	int		i;
+	int		signal;
 
+	if (!nptr)
+		return (0);
 	ascii_to_int = 0;
 	i = 0;
 	signal = 1;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
+	while (nptr[i] && (nptr[i] == ' ' || nptr[i] == '\t'
+			|| nptr[i] == '\n' || nptr[i] == '\r'
+			|| nptr[i] <= '\v' || nptr[i] <= '\f'))
 		i++;
-	if (nptr[i] == 43 || nptr[i] == 45)
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
 			signal = -1;
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		ascii_to_int = ascii_to_int * 10 + nptr[i] - '0';
+		ascii_to_int = ascii_to_int * 10 + (nptr[i] - '0');
 		i++;
 	}
 	return (ascii_to_int * signal);

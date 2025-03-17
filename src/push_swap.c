@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 14:26:42 by jemorais          #+#    #+#             */
-/*   Updated: 2025/02/14 17:05:34 by jemorais         ###   ########.fr       */
+/*   Created: 2025/02/14 17:18:47 by jemorais          #+#    #+#             */
+/*   Updated: 2025/03/13 19:23:54 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+/*push_swap.c*/
 
-char	*ft_strrchr(const char *s, int c)
+#include "push_swap.h"
+
+void	ft_push_swap(t_push_swap *data)
 {
-	int	i;
-	int	flag;
-
-	i = 0;
-	flag = -1;
-	while (s[i])
-	{
-		if (s[i] == (char) c)
-			flag = i;
-		i++;
-	}
-	if ((unsigned char) c == '\0')
-		return ((char *)s + i);
-	if (flag != -1)
-		return ((char *)s + flag);
-	return (NULL);
+	if (ft_is_sorted(data->stack_a))
+		return ;
+	if (data->size_a == 1)
+		return ;
+	else if (data->size_a <= 5)
+		ft_until_five_numbers(data);
+	else
+		ft_algorithm(data);
+	ft_finish_rotation(data);
 }
