@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:18:47 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 16:54:57 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/13 19:23:54 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 
 void	ft_push_swap(t_push_swap *data)
 {
-	// ft_printf("Stack_A entrada:\n");
-	// ft_printf("size_a: %d\n", data->size_a);
-	// ft_print_stack(data->stack_a);
-	// ft_print_stack(data->stack_b);
-
 	if (ft_is_sorted(data->stack_a))
 		return ;
 	if (data->size_a == 1)
@@ -30,9 +25,4 @@ void	ft_push_swap(t_push_swap *data)
 	else
 		ft_algorithm(data);
 	ft_finish_rotation(data);
-
-	// ft_printf("Stack_A saída:\n");
-	// ft_printf("size_a: %d\n", data->size_a);
-	// ft_print_stack(data->stack_a);
-	// ft_print_stack(data->stack_b);
 }

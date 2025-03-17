@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 17:26:38 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 17:05:47 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/17 09:31:20 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ bool		ft_validate_number(char *str);
 bool		ft_duplicate_numbers(char **numbers);
 bool		ft_validate_args(int ac, char **av);
 
-// init
+// init.c
 void		ft_init_push_swap_strings(char **numbers);
 void		ft_init_push_swap_args(char **av, int ac);
 void		add_data_to_stack(t_push_swap *data, int value);
@@ -61,10 +61,10 @@ void		ft_free_stack(t_stack **stack);
 void		ft_free_split(char **split);
 void		ft_error(void);
 
-// push_swap
+// push_swap.c
 void		ft_push_swap(t_push_swap *data);
 
-// until_five_numbers
+// until_five_numbers.c
 void		ft_until_five_numbers(t_push_swap *data);
 void		ft_four_or_five_numbers(t_push_swap *data);
 void		ft_three_numbers(t_push_swap *data);
@@ -111,14 +111,5 @@ void		ft_rr(t_push_swap *data);
 void		ft_rra(t_push_swap *data);
 void		ft_rrb(t_push_swap *data);
 void		ft_rrr(t_push_swap *data);
-
-/*SUPORT --------------------------------------------*/
-void		ft_print_stack(t_stack *stack);
-void		ft_print_position(t_stack *stack);
-void		ft_print_upper(t_stack *stack);
-void		ft_print_target(t_stack *stack);
-void		ft_print_price(t_stack *stack);
-void		ft_print_cheap(t_stack *stack);
-void		ft_print_price_target(t_stack *stack);
 
 #endif

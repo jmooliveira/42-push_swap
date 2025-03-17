@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 19:01:54 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 17:05:21 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/13 19:25:20 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,11 @@ void	ft_algorithm(t_push_swap *data)
 	ft_three_numbers(data);
 	while (data->stack_b)
 	{
-		// ft_print_stack(data->stack_a);
 		ft_set_values(data);
 		best_cheap = ft_find_best_cheap(data);
 		ft_rotate_both(data, best_cheap);
 		ft_rotate_a(data, best_cheap);
 		ft_rotate_b(data, best_cheap);
-		// ft_printf("size_a: %d\n", data->size_a);
 	}
 }
 
@@ -36,10 +34,10 @@ void	ft_rotate_both(t_push_swap *data, t_stack *best_cheap)
 	{
 		if (best_cheap->target->upper == 1 && best_cheap->upper == 1)
 			ft_rr(data);
-		else if(best_cheap->target->upper == 0 && best_cheap->upper == 0)
+		else if (best_cheap->target->upper == 0 && best_cheap->upper == 0)
 			ft_rrr(data);
-		else if ((best_cheap->target->upper == 0 && best_cheap->upper == 1) ||
-				(best_cheap->target->upper == 1 && best_cheap->upper == 0))
+		else if ((best_cheap->target->upper == 0 && best_cheap->upper == 1)
+			|| (best_cheap->target->upper == 1 && best_cheap->upper == 0))
 			break ;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jemorais <jemorais@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 10:50:55 by jemorais          #+#    #+#             */
-/*   Updated: 2025/03/10 16:05:36 by jemorais         ###   ########.fr       */
+/*   Updated: 2025/03/13 19:06:12 by jemorais         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_stack(t_stack *stack)
 	ft_printf("Stack: ");
 	while (stack)
 	{
-		ft_printf("%d ", stack->value);
+		ft_printf("%d -> ", stack->value);
 		stack = stack->next;
 	}
 	ft_printf("NULL\n");
